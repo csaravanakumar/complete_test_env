@@ -9,8 +9,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-           echo "Current build version :: $BUILDVERSION"
-           echo "Current build version :: $formattedDate"
+           echo "Current build version :: ${BUILDVERSION}"
+           echo "Current build version :: ${formattedDate}"
            }
         }
       }
