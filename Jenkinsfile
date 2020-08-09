@@ -8,7 +8,8 @@ pipeline {
     stage('Build') {
       steps {
         script {
-           echo 'Building...${BUILDVERSION}'
+           echo "Current build version :: $BUILDVERSION"
+            }
         }
       }
     }
