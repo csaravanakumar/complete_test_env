@@ -1,4 +1,7 @@
 pipeline {
+   environment {
+        def BUILDVERSION = sh(script: "echo `date +%s`", returnStdout: true).trim()
+    }
   agent {label 'EC2StaticJenkinsSlaveFinal'}
   stages {
 
@@ -6,7 +9,7 @@ pipeline {
       steps {
         script {
           build.setBuildDescription(
-            title: "${env.BUILD_NUMBER} My build title.",
+            title: "${BUILDVERSION} My build title.",
             description: 'My build description.'
           )
         }
