@@ -6,7 +6,7 @@ pipeline {
       steps {
         script {
           build.setBuildDescription(
-            title: "#${env.BUILD_NUMBER} My build title.",
+            title: "${env.BUILD_NUMBER} My build title.",
             description: 'My build description.'
           )
         }
