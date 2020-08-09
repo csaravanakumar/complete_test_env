@@ -5,21 +5,10 @@ pipeline {
   agent {label 'EC2StaticJenkinsSlaveFinal'}
   stages {
 
-    stage('Init') {
-      steps {
-        script {
-          build.setBuildDescription(
-            title: "${BUILDVERSION} My build title.",
-            description: 'My build description.'
-          )
-        }
-      }
-    }
-
     stage('Build') {
       steps {
         script {
-          echo 'Building...'
+           echo 'Building...${BUILDVERSION}'
         }
       }
     }
