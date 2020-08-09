@@ -2,8 +2,7 @@ pipeline {
    environment {
         def BUILDVERSION = sh(script: "echo `date +%s`", returnStdout: true).trim()
         def formattedDate = aDate.format("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'")
-            templateModel.formattedDate = formattedDate
-    }
+               }
   agent {label 'EC2StaticJenkinsSlaveFinal'}
   stages {
 
