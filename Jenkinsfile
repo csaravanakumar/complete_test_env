@@ -5,8 +5,7 @@ pipeline {
     stage('Build') {
       steps {
         script {
-           echo "Current build version :: $BUILDVERSION"
-           echo "'date +%s'"
+           test()
             }
         }
       }
