@@ -9,6 +9,7 @@ pipeline {
       steps {
         script {
            echo "Current build version :: $BUILDVERSION"
+           echo "'date +%s'"
             }
         }
       }
