@@ -1,16 +1,13 @@
 pipeline {
    environment {
-        def BUILDVERSION = sh(script: "echo `date +%s`", returnStdout: true).trim()
+        def BUILDVERSION = env.BUILD_NUMBER
            }
   agent {label 'EC2StaticJenkinsSlaveFinal'}
   stages {
 
     stage('Build') {
       steps {
-        script {
-           echo "Current build version :: ${BUILDVERSION}"
-           echo "Current build version :: ${formattedDate}"
-           }
+        test()
         }
       }
     
@@ -18,7 +15,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         script {
-          echo 'Unit Testing...'
+           echo "Unit Testing...${BUILDVERSION}"
         }
       }
     }
