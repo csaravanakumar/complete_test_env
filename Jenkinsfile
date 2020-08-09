@@ -1,12 +1,13 @@
 pipeline {
-   environment {
-           }
-  agent {label 'EC2StaticJenkinsSlaveFinal'}
+   agent {label 'EC2StaticJenkinsSlaveFinal'}
   stages {
 
     stage('Build') {
       steps {
-        test()
+        script {
+           echo "Current build version :: $BUILDVERSION"
+           echo "'date +%s'"
+            }
         }
       }
     
@@ -14,7 +15,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         script {
-           echo "Unit Testing..."
+          echo 'Unit Testing...'
         }
       }
     }
